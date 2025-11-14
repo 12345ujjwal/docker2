@@ -1,6 +1,6 @@
 // IMPORTANT: Replace this with your actual Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyBDXyP3Coh9-Di-qy_nK7Rpui7GAffi2ks",
+    apiKey: "API HERE",
     authDomain: "abiding-cedar-332406.firebaseapp.com",
     projectId: "abiding-cedar-332406",
     storageBucket: "abiding-cedar-332406.firebasestorage.app",
@@ -12,4 +12,5 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
+
 const db = firebase.firestore(); // Initialize Cloud Firestore
