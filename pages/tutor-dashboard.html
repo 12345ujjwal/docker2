@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutor Dashboard</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="dashboard-page">
+  <header>
+    <h1 class="logo">E-Learning Platform</h1>
+    <div>
+      <span id="welcomeUser"></span>
+      <button onclick="logout()" class="btn-secondary">Logout</button>
+    </div>
+  </header>
+
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <nav>
+        <ul>
+          <li><a href="#" class="active" onclick="showPanel('my-courses')">My Courses</a></li>
+          <li><a href="#" onclick="showPanel('my-students')">My Students</a></li>
+          <li><a href="#" onclick="showPanel('profile')">Profile</a></li>
+          <li><a href="#" onclick="showPanel('settings')">Settings</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="dashboard-content">
+      <div id="my-courses-panel" class="content-panel active">
+        <h2>My Courses</h2>
+        <a href="create-course.html" class="btn">Create New Course</a>
+        <div id="tutorCoursesList" class="courses-list-container">
+          <!-- Tutor's created courses will be loaded here -->
+        </div>
+      </div>
+      <div id="my-students-panel" class="content-panel">
+        <h2>My Students</h2>
+        <div id="myStudentsList" class="courses-list-container">
+          <!-- Students will be loaded here by script.js -->
+        </div>
+      </div>
+      <div id="profile-panel" class="content-panel">
+        <h2>My Profile</h2>
+        <div id="userProfile">
+          <!-- Profile details will be loaded here by script.js -->
+        </div>
+      </div>
+      <div id="settings-panel" class="content-panel">
+        <h2>Settings</h2>
+        <p>Settings page is under construction.</p>
+      </div>
+    </main>
+  </div>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+  <!-- Your Firebase Init and Main Script -->
+  <script src="../firebase-init.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

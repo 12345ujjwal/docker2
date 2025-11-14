@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up - E-Learning</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div id="signupForm">
+   <h1>Sign Up</h1>
+   <form onsubmit="signup(event)">
+    <div class="login-category">
+      <input type="radio" id="student" name="role" value="student" checked>
+      <label for="student">Student</label>
+      <input type="radio" id="tutor" name="role" value="tutor">
+      <label for="tutor">Tutor</label>
+    </div>
+    <!-- Common Fields -->
+    <label for="signupName">Full Name:</label>
+    <input type="text" id="signupName" placeholder="Enter Full Name" required>
+    <label for="signupEmail">Email:</label>
+    <input type="email" id="signupEmail" placeholder="Enter Email" required>
+    <label for="signupPassword">Password:</label>
+    <input type="password" id="signupPassword" placeholder="Enter Password" required>
+
+    <!-- Student Specific Fields -->
+    <label for="college" class="student-field">College/University:</label>
+    <input type="text" id="college" class="student-field" placeholder="Enter College/University Name" required>
+    <label for="course" class="student-field">Course:</label>
+    <input type="text" id="course" class="student-field" placeholder="e.g., B.Tech, B.Sc" required>
+    <label for="year" class="student-field">Academic Year:</label>
+    <select id="year" class="student-field" required>
+      <option value="" disabled selected>Select your academic year</option>
+      <option value="1st Year">1st Year</option>
+      <option value="2nd Year">2nd Year</option>
+      <option value="3rd Year">3rd Year</option>
+      <option value="4th Year">4th Year</option>
+    </select>
+    <label for="mobile" class="student-field">Mobile Number:</label>
+    <input type="tel" id="mobile" class="student-field" placeholder="Enter Mobile Number" required>
+
+    <!-- Tutor Specific Fields -->
+    <label for="subject" class="tutor-field">Subject:</label>
+    <input type="text" id="subject" class="tutor-field" placeholder="e.g., Physics, Web Development" required>
+    <label for="age" class="tutor-field">Age:</label>
+    <input type="number" id="age" class="tutor-field" placeholder="Enter Your Age" min="1" required>
+    <label for="experience" class="tutor-field">Experience (in years):</label>
+    <input type="number" id="experience" class="tutor-field" placeholder="e.g., 5" min="1" required>
+
+    <button type="submit">Sign Up</button>
+   </form>
+  <p>Already have an account? <a href="login.html">Login</a></p>
+  <p><a href="../index.html">← Back to Home</a></p>
+  </div>
+  
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+  <!-- Your Firebase Init and Main Script -->
+  <script src="../firebase-init.js"></script>
+  <script src="../script.js"></script>
+  <script>
+    const studentRadio = document.getElementById('student');
+    const tutorRadio = document.getElementById('tutor');
+    const studentFields = document.querySelectorAll('.student-field');
+    const tutorFields = document.querySelectorAll('.tutor-field');
+
+    function toggleFields() {
+      const isStudent = studentRadio.checked;
+      studentFields.forEach(el => {
+        el.style.display = isStudent ? '' : 'none';
+        if (el.tagName === 'INPUT' || el.tagName === 'SELECT') el.required = isStudent;
+      });
+      tutorFields.forEach(el => {
+        el.style.display = isStudent ? 'none' : '';
+        if (el.tagName === 'INPUT' || el.tagName === 'SELECT') el.required = !isStudent;
+      });
+    }
+
+    studentRadio.addEventListener('change', toggleFields);
+    tutorRadio.addEventListener('change', toggleFields);
+
+    // Initial call to set required attributes on page load
+    toggleFields();
+  </script>
+</body>
+</html>

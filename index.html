@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Learning Platform</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="homepage">
+  <header>
+    <h1 class="logo">Skill Lab</h1>
+    <nav>
+      <a href="pages/login.html">Login</a>
+      <a href="pages/signup.html">Sign Up</a>
+      <a href="pages/courses.html">Courses</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Learn Anytime, Anywhere</h2>
+      <p>Join thousands of learners around the world and gain new skills today.</p><br><br>
+      <a href="pages/signup.html" class="btn">Get Started</a>
+    </div>
+    <div class="hero-image">
+      <img src = "images/photo-1673515334386-2b24073bb22f.avif" alt="Learning">
+    </div>
+  </section>
+
+  <section class="why-choose-us">
+    <h2 class="section-title">Why Choose Our Platform?</h2>
+    <div class="features-container">
+      <div class="feature-card">
+        <img src="images/index_img/expert-teacher.jpg" alt="Expert Tutors" class="feature-icon">
+        <h3>Expert Tutors</h3>
+        <p>Learn from industry experts who are passionate about teaching and have years of real-world experience.</p>
+      </div>
+      <div class="feature-card">
+        <img src="images/index_img/flexible_learning.jpg" alt="Flexible Learning" class="feature-icon">
+        <h3>Flexible Learning</h3>
+        <p>Learn at your own pace, anytime, anywhere. Access all course materials on your desktop, tablet, or mobile phone.</p>
+      </div>
+      <div class="feature-card">
+        <img src="images/index_img/indian-school.jpg" alt="Community" class="feature-icon">
+        <h3>Vibrant Community</h3>
+        <p>Join a thriving community of learners and mentors to collaborate, ask questions, and share your progress.</p>
+      </div>
+      <div class="feature-card">
+        <img src="images/index_img/resource.jpg" alt="Free Resources" class="feature-icon">
+        <h3>Free Resources</h3>
+        <p>Access a wealth of free articles, tutorials, and downloadable resources to supplement your learning journey.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="featured-courses">
+    <h2 class="section-title">Explore Our Popular Courses</h2>
+    <div class="slider-viewport">
+      <div class="courses-container">
+        <!-- Original Cards -->
+        <div class="course-card">
+          <img src="images/course_img/photo-1608499296275-1f22c6391b88.avif" alt="Web Development Course">
+          <h3>Web Development</h3>
+          <p>Learn HTML, CSS, and JavaScript to build modern, responsive websites from scratch.</p>
+          <a href="pages/courses.html#web-dev" class="btn-secondary">Learn More</a>
+        </div>
+        <div class="course-card">
+          <img src="images/course_img/photo-1718241905696-cb34c2c07bed.avif" alt="Data Science Course">
+          <h3>Data Science</h3>
+          <p>Master data analysis, visualization, and machine learning with Python and popular libraries.</p>
+          <a href="pages/courses.html#data-science" class="btn-secondary">Learn More</a>
+        </div>
+        <div class="course-card">
+          <img src="images/course_img/istockphoto-2205982417-612x612.webp" alt="UI/UX Design Course">
+          <h3>UI/UX Design</h3>
+          <p>Design beautiful, intuitive, and user-friendly interfaces for web and mobile applications.</p>
+          <a href="pages/courses.html#ui-ux" class="btn-secondary">Learn More</a>
+        </div>
+        <!-- Duplicated Cards for seamless loop -->
+        <div class="course-card">
+          <img src="images/course_img/photo-1608499296275-1f22c6391b88.avif" alt="Web Development Course">
+          <h3>Web Development</h3>
+          <p>Learn HTML, CSS, and JavaScript to build modern, responsive websites from scratch.</p>
+          <a href="pages/courses.html#web-dev" class="btn-secondary">Learn More</a>
+        </div>
+        <div class="course-card">
+          <img src="images/course_img/photo-1718241905696-cb34c2c07bed.avif" alt="Data Science Course">
+          <h3>Data Science</h3>
+          <p>Master data analysis, visualization, and machine learning with Python and popular libraries.</p>
+          <a href="pages/courses.html#data-science" class="btn-secondary">Learn More</a>
+        </div>
+        <div class="course-card">
+          <img src="images/course_img/istockphoto-2205982417-612x612.webp" alt="UI/UX Design Course">
+          <h3>UI/UX Design</h3>
+          <p>Design beautiful, intuitive, and user-friendly interfaces for web and mobile applications.</p>
+          <a href="pages/courses.html#ui-ux" class="btn-secondary">Learn More</a>
+        </div>
+      </div>
+    </div>
+    <div class="view-all-container">
+      <a href="pages/courses.html" class="btn">View All Courses</a>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <h2 class="section-title">Contact Us</h2>
+    <p class="section-subtitle">Have questions? We'd love to hear from you.</p>
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <h3>Get in Touch</h3>
+        <p>We are here to help and answer any question you might have. We look forward to hearing from you.</p>
+        <div class="info-item">
+          <span class="info-icon">📍</span>
+          <span>IIM Road, Lucknow City, 226013</span>
+        </div>
+        <div class="info-item">
+          <span class="info-icon">✉️</span>
+          <span>contact@skilllab.com</span>
+        </div>
+        <div class="info-item">
+          <span class="info-icon">📞</span>
+          <span>+91 7595864219</span>
+        </div>
+      </div>
+      <div class="contact-form-container">
+        <form id="contactForm" onsubmit="handleContactSubmit(event)">
+          <div class="form-row">
+            <input type="text" id="contactName" name="name" placeholder="Your Name" required>
+            <input type="email" id="contactEmail" name="email" placeholder="Your Email" required>
+          </div>
+          <textarea id="contactMessage" name="message" rows="6" placeholder="Your Message" required></textarea>
+          <button type="submit" class="btn">Send Message</button>
+          <p id="contactFormStatus" class="form-status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section about">
+        <h1 class="logo">Skill Lab</h1>
+        <p>Our mission is to provide high-quality, accessible, and affordable education to learners all over the world.</p>
+      </div>
+      <div class="footer-section links">
+        <h2>Quick Links</h2>
+        <ul>
+          <li><a href="pages/courses.html">Courses</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2024 Skill Lab | All Rights Reserved
+    </div>
+  </footer>
+  
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  
+  <script src="firebase-init.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

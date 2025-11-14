@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Course - E-Learning</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div id="signupForm"> <!-- Reusing signup form styles for consistency -->
+   <h1>Edit Course</h1>
+   <form onsubmit="updateCourse(event)">
+    <label for="courseTitle">Course Title:</label>
+    <input type="text" id="courseTitle" placeholder="e.g., Introduction to Python" required>
+
+    <label for="courseDescription">Course Description:</label>
+    <textarea id="courseDescription" rows="4" placeholder="Describe what this course is about" required></textarea>
+
+    <label for="courseImage">Course Image URL:</label>
+    <input type="url" id="courseImage" placeholder="https://example.com/image.jpg" required>
+
+    <label for="courseCategory">Category:</label>
+    <select id="courseCategory" required>
+      <option value="" disabled selected>Select a category</option>
+      <option value="Web Development">Web Development</option>
+      <option value="Data Science">Data Science</option>
+      <option value="UI/UX Design">UI/UX Design</option>
+      <option value="Computer Science">Computer Science</option>
+      <option value="AI & ML">AI & ML</option>
+      <option value="Cyber Security">Cyber Security</option>
+      <option value="Cloud Computing">Cloud Computing</option>
+    </select>
+
+    <button type="submit">Update Course</button>
+   </form>
+  <p><a href="tutor-dashboard.html">← Back to Dashboard</a></p>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <script src="../firebase-init.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>
